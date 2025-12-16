@@ -1,0 +1,168 @@
+
+.navbar-container {
+  position: fixed;     
+  top: 0;              
+  left: 0;            
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:  #f2cc4c; 
+  z-index: 999;
+}
+
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  color: black;
+}
+
+
+.desktop-menu {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-link {
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+
+
+.icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+}
+
+.icons i {
+  cursor: pointer;
+  position: relative;
+  padding: 6px;
+  color: black;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.15s ease;
+}
+
+
+.icons i:hover {
+  transform: scale(1.08);
+}
+
+.icons i:active {
+  transform: scale(0.85);
+}
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: black;
+}
+
+@media (max-width: 992px) {
+  .desktop-menu {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background:  #f2cc4c;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 20px;
+  z-index: 2000;
+}
+
+.mobile-menu a {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  padding: 6px 10px;
+  border-radius: 6px;
+  overflow: hidden;
+  
+}
+
+.mobile-logo {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+
+.nav-link,
+.mobile-menu a {
+  transition: transform 0.15s ease;
+  cursor: pointer;
+}
+
+.nav-link:active,
+.mobile-menu a:active {
+  transform: scale(0.92);
+  
+}
+
+.nav-link:active::after,
+.mobile-menu a:active::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.45s ease-out;
+
+}
+
+
+.icons i:active::after {
+  content: "";
+  position: absolute;
+  width: 220%;
+  height: 220%;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.45s ease-out;
+}
+
+@keyframes ripple {
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}

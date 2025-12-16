@@ -18,15 +18,24 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css"
-            ]
+            
+        "assets": [
+          "src/favicon.ico",
+          "src/assets"
+          ],
+
+         "styles": [
+           "src/assets/libs/bootstrap/css/bootstrap.min.css",
+           "src/assets/libs/fontawesome/css/all.min.css",
+           "src/assets/libs/aos/css/aos.css",
+           "src/styles.css"
+          ],
+          "scripts": [
+           "src/assets/libs/bootstrap/js/bootstrap.bundle.min.js",
+            "src/assets/libs/aos/js/aos.js"
+          ]
+
+            
           },
           "configurations": {
             "production": {
@@ -88,5 +97,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -1,0 +1,39 @@
+<div class="register-container">
+
+  <h1 class="title">CREATE ACCOUNT</h1>
+  <div class="underline"></div>
+
+  <form (ngSubmit)="onRegister()">
+    
+    <div class="row">
+      <div class="field">
+        <label>First Name</label>
+        <input type="text" [(ngModel)]="firstName" name="firstName" required />
+      </div>
+
+      <div class="field">
+        <label>Last Name</label>
+        <input type="text" [(ngModel)]="lastName" name="lastName" required />
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="email" name="email" required />
+    </div>
+
+    <div class="field">
+      <label>Password</label>
+      <input type="password" [(ngModel)]="password" name="password" required />
+    </div>
+
+    <div class="btns">
+      <button class="btn-yellow" type="submit">CREATE</button>
+
+      <button class="btn-white" routerLink="/home">
+        RETURN TO STORE
+      </button>
+    </div>
+
+  </form>
+</div>

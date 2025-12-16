@@ -1,0 +1,52 @@
+<div class="login-container">
+
+  <h1 class="title">LOGIN</h1>
+  <div class="title-underline"></div>
+
+ 
+ 
+  <form (ngSubmit)="onLogin()">
+
+    <label class="label">Username</label>
+    <input
+      type="text"
+      class="input-box"
+      [(ngModel)]="username"
+      name="username"
+      required
+      placeholder="emilys"
+    />
+
+    <label class="label">Password</label>
+    <input
+      type="password"
+      class="input-box"
+      [(ngModel)]="password"
+      name="password"
+      required
+      placeholder="emilyspass"
+    />
+
+    <div class="forgot-box">
+      <a class="forgot-link" routerLink="/home">
+        Forgot your password?
+      </a>
+    </div>
+
+    <div class="buttons-row">
+      <button type="submit" class="btn-yellow">
+        SIGN IN
+      </button>
+
+      <button
+        type="button"
+        class="btn-black"
+        routerLink="/register"
+      >
+        CREATE ACCOUNT
+      </button>
+    </div>
+
+  </form>
+
+</div>

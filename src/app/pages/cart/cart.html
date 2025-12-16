@@ -1,0 +1,61 @@
+<div class="cart-container" *ngIf="cartItems.length > 0; else emptyCart">
+
+  <h2 class="title">SHOPPING CART</h2>
+
+  <div class="cart-item" *ngFor="let item of cartItems">
+    
+    <div class="item-left">
+      <img [src]="item.image" class="item-img" />
+
+      <div class="item-info">
+        <h3 class="item-title">{{ item.title }}</h3>
+      </div>
+    </div>
+
+    <div class="item-right">
+
+     
+      <i class="fa fa-trash delete-icon" (click)="remove(item)"></i>
+
+      <div class="qty-controls">
+        <button (click)="decrease(item)">−</button>
+        <span>{{ item.quantity }}</span>
+        <button (click)="increase(item)">+</button>
+      </div>
+
+      <div class="item-price">
+       $ {{ item.price * item.quantity }}
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <label class="note-label">Special instructions for seller</label>
+  <textarea class="note-box"></textarea>
+
+  <p class="shipping-note">Shipping & taxes calculated at checkout</p>
+
+  <div class="footer">
+
+    <button class="continue" 
+        (click)="goShop(); createRipple($event)">
+        CONTINUE SHOPPING
+    </button>
+
+    <button class="checkout" 
+        (click)="goHome(); createRipple($event)">
+        CHECK OUT
+    </button>
+
+  </div>
+
+  <div class="subtotal">
+    SUBTOTAL LE {{ getTotal() }}
+  </div>
+
+</div>
+
+<ng-template #emptyCart>
+  <p class="empty">Your cart is empty.</p>
+</ng-template>

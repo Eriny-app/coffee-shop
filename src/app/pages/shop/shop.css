@@ -1,0 +1,136 @@
+.products-title {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.products-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.products-title .underline {
+  width: 60px;
+  height: 4px;
+  background: #f1c40f;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+
+.search-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+
+.search-box {
+  margin-top: 15px;
+  padding: 10px 38px 10px 14px;
+  width: 280px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.search-box:focus {
+  border-color: #f1c40f;
+  box-shadow: 0 0 6px rgba(241, 196, 15, 0.6);
+}
+
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/149/149852.png');
+  background-size: cover;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.search-icon:hover {
+  opacity: 1;
+}
+
+
+.search-results {
+  list-style: none;
+  padding: 0;
+  margin: 10px auto 20px;
+  max-width: 300px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.search-results li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.search-results li:hover,
+.search-results li.active {
+  background: #f1c40f;
+  color: #fff;
+}
+
+
+.not-found {
+  text-align: center;
+  color: black;
+  margin-top: 20px;
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  justify-items: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+
+  .products-title {
+    margin: 25px 0 15px;
+  }
+
+  .products-title h2 {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  .search-box {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .search-results {
+    max-width: 90%;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .products-title h2 {
+    font-size: 22px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

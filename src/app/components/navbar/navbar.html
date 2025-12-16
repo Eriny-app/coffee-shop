@@ -1,0 +1,114 @@
+<nav class="navbar-container">
+
+  <div class="logo">
+    MY <i class="fa-regular fa-mug-saucer"></i> COFFEE
+  </div>
+
+
+  <ul class="nav-links desktop-menu">
+
+    <li>
+      <a class="nav-link"
+         [routerLink]="isHomePage() ? null : '/home'"
+         (click)="scrollTo('home')">
+        Home
+      </a>
+    </li>
+
+    <li>
+      <a class="nav-link"
+         [routerLink]="isHomePage() ? null : '/home'"
+         (click)="scrollTo('about')">
+        About
+      </a>
+    </li>
+
+    <li>
+      <a class="nav-link"
+         [routerLink]="isHomePage() ? null : '/home'"
+         (click)="scrollTo('gallery')">
+        Gallery
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/shop" class="nav-link">Shop</a>
+    </li>
+
+    <li>
+      <a routerLink="/menu" class="nav-link">Menu</a>
+    </li>
+
+    <li>
+      <a class="nav-link"
+         [routerLink]="isHomePage() ? null : '/home'"
+         (click)="scrollTo('contact')">
+        Contact Us
+      </a>
+    </li>
+
+  </ul>
+
+
+  <div class="icons">
+
+ 
+    <div class="cart-icon-wrapper" routerLink="/cart">
+      <i class="fa fa-shopping-cart"></i>
+      <span class="cart-badge" *ngIf="cartCount > 0">
+        {{ cartCount }}
+      </span>
+    </div>
+
+  
+    <i
+      *ngIf="!isLoggedIn()"
+      class="fa fa-user"
+      routerLink="/login">
+    </i>
+
+   
+    <i
+      *ngIf="isLoggedIn()"
+      class="fa fa-right-from-bracket"
+      (click)="logout()">
+    </i>
+
+  </div>
+
+
+  <button class="hamburger" (click)="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+</nav>
+
+
+@if (isMenuOpen) {
+  <div class="mobile-menu">
+    <div class="mobile-logo">MY COFFEE</div>
+
+    <a [routerLink]="isHomePage() ? null : '/home'"
+       (click)="scrollTo('home'); closeMenu()">
+      Home
+    </a>
+
+    <a [routerLink]="isHomePage() ? null : '/home'"
+       (click)="scrollTo('about'); closeMenu()">
+      About
+    </a>
+
+    <a [routerLink]="isHomePage() ? null : '/home'"
+       (click)="scrollTo('gallery'); closeMenu()">
+      Gallery
+    </a>
+
+    <a routerLink="/shop" (click)="closeMenu()">Shop</a>
+    <a routerLink="/menu" (click)="closeMenu()">Menu</a>
+
+    <a [routerLink]="isHomePage() ? null : '/home'"
+       (click)="scrollTo('contact'); closeMenu()">
+      Contact Us
+    </a>
+  </div>
+}
